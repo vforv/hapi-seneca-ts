@@ -23,3 +23,8 @@ To test service go to service and run npm run test.
 Ex.
 cd api-gateway
 npm run test
+
+To run with docker-compose:
+
+go to system/fuge and run:
+docker-compose up
