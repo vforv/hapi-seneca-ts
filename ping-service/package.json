@@ -1,0 +1,33 @@
+{
+  "name": "ping-service",
+  "version": "1.0.0",
+  "description": "Test service",
+  "main": "service.ts",
+  "directories": {
+    "test": "test"
+  },
+  "scripts": {
+    "test": "lab -a code -t 100 -L -v -T ./node_modules/lab-transform-typescript",
+    "test-coverage": "lab  -c -a code -r html -o coverage/coverage.html --sourcemaps --transform node_modules/lab-transform-typescript"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "@types/moment": "^2.13.0",
+    "moment": "^2.18.1",
+    "seneca": "^3.4.1",
+    "seneca-balance-client": "^0.6.1",
+    "seneca-mesh": "^0.10.0"
+  },
+  "devDependencies": {
+    "@types/code": "^4.0.3",
+    "@types/lab": "^11.1.0",
+    "@types/node": "^8.0.17",
+    "@types/seneca": "^2.1.7",
+    "@types/sinon": "^2.3.3",
+    "code": "^4.1.0",
+    "lab": "^14.1.1",
+    "lab-transform-typescript": "^3.0.1",
+    "sinon": "^2.4.1"
+  }
+}

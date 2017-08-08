@@ -1,0 +1,20 @@
+{
+  "name": "bases-service",
+  "version": "1.0.0",
+  "description": "Bases service required by seneca mesh",
+  "main": "service.ts",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "seneca": "^3.4.1",
+    "seneca-balance-client": "^0.6.1",
+    "seneca-mesh": "^0.10.0"
+  },
+  "devDependencies": {
+    "@types/node": "^8.0.17",
+    "@types/seneca": "^2.1.7"
+  }
+}
