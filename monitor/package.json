@@ -14,5 +14,6 @@
     "seneca-mesh": "^0.10.0"
   },
   "devDependencies": {
+    "typescript": "^2.4.2"
   }
 }

@@ -5,7 +5,10 @@
   "main": "server.ts",
   "scripts": {
     "test": "lab -a code -t 100 -L -v -T ./node_modules/lab-transform-typescript",
-    "test-coverage": "lab  -c -a code -r html -o coverage/coverage.html --sourcemaps --transform node_modules/lab-transform-typescript"
+    "test-coverage": "lab  -c -a code -r html -o coverage/coverage.html --sourcemaps --transform node_modules/lab-transform-typescript",
+    "start": "node ../dist/api-gateway/main.js",
+    "prestart": "tsc && cp -rf node_modules ../dist/api-gateway && npm run copyjson",
+    "copyjson": "copyfiles -e \"../api-gateway/**/node_modules/**\" -u 1 \"../api-gateway/**/**.json\" \"../dist\""
   },
   "keywords": [
     "typescipt",
@@ -43,12 +46,14 @@
     "@types/seneca": "^2.1.7",
     "@types/sinon": "^2.3.3",
     "code": "^4.1.0",
+    "copyfiles": "^1.2.0",
     "lab": "^14.1.1",
     "lab-transform-typescript": "^3.0.1",
     "nodemon": "^1.11.0",
     "rimraf": "^2.6.1",
     "seneca-stub": "^1.2.2",
     "sinon": "^2.4.1",
-    "ts-node": "^3.3.0"
+    "ts-node": "^3.3.0",
+    "typescript": "^2.4.2"
   }
 }

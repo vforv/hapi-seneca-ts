@@ -2,7 +2,7 @@
 
 Install typescript
 tsc -v
-Version 2.3.2
+Version 2.4.2
 
 Go to system dir: cd system and follow steps...
 
@@ -13,6 +13,8 @@ Go to system dir: cd system and follow steps...
 5. start all
 
 Server will start on: localhost:5000
+
+Ping route: localhost:5000/v1/ping/formated
 
 To see more options for fuge type in shell help.
 
