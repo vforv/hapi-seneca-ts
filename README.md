@@ -15,3 +15,9 @@ Go to system dir: cd system and follow steps...
 Server will start on: localhost:5000
 
 To see more options for fuge type in shell help.
+
+To test service go to service and run npm run test.
+
+Ex.
+cd api-gateway
+npm run test
