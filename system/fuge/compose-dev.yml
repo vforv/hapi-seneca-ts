@@ -18,3 +18,7 @@ ping:
   type: process
   path: ../../ping-service
   run: ts-node service.ts
+repl:
+  type: process
+  path: ../../repl
+  run: ts-node repl.ts

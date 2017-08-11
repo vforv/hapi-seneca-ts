@@ -3,7 +3,6 @@ import { getServerConfigs } from './environments';
 import * as Seneca from "seneca";
 import * as Hapi from 'hapi';
 import { HapiServer } from './sever-types';
-import { Routes } from './routes/index';
 import { Modlues } from './modules/index';
 
 

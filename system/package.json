@@ -10,7 +10,8 @@
     "build": "./build.sh && npm run copyjson && npm run copysys",
     "copyjson": "copyfiles -e \"../**/node_modules/**\" -u 1 \"../**/*.json\" \"../dist\"",
     "copysys": "cp -rf ../system ../dist/",
-    "prebuild": "rimraf ../dist"
+    "prebuild": "rimraf ../dist",
+    "repl": "rlwrap telnet localhost 30303"
   },
   "keywords": [
     "typescipt",

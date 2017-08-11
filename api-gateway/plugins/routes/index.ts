@@ -1,5 +1,5 @@
 import { PingRoutes } from '../../routes/ping/ping.routes';
-import { Routes } from '../../routes/index';
+import { RoutesFactory } from '../../routes/index';
 import { HapiServer, IRegister } from '../../sever-types';
 
 export class RegisterRoutes {
@@ -11,8 +11,10 @@ export class RegisterRoutes {
 
     register: IRegister = (server: HapiServer, options: any, next: any) => {
         server.bind(this);
-        
-        Routes(server);
+        //New group of routes
+        let routes = new RoutesFactory(new PingRoutes(server))
+        //New group of routes
+        routes.register();
         
         this._register(server, {});
         next();

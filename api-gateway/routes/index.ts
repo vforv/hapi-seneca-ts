@@ -2,11 +2,24 @@
 import { HapiServer } from '../sever-types';
 import { PingRoutes } from './ping/ping.routes';
 
-export function Routes(server: HapiServer) {
-   let bootstrap: any = [];
 
-   bootstrap.concat(new PingRoutes(server).pingRoutes())
+export abstract class RoutesClass {
+    public abstract register(): any[];
+}
 
-   return bootstrap;
-   
+
+/**
+ * To add new group of routes go to plugins/routes/index.ts
+ */
+export class RoutesFactory implements RoutesClass {
+    private routes: any[] = [];
+
+    constructor(routes: RoutesClass) {
+        this.routes.concat(routes.register());
+    }
+
+    public register(): any {
+        return this.routes;
+    }
+
 }

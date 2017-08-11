@@ -33,7 +33,10 @@
     "seneca-demo-logger": "^0.2.0",
     "seneca-entity": "^2.0.2",
     "seneca-mesh": "^0.10.0",
-    "vision": "^4.1.1"
+    "vision": "^4.1.1",
+    "good": "^7.0.1",
+    "good-console": "^6.1.2",
+    "good-squeeze": "^3.0.1"
   },
   "devDependencies": {
     "@types/boom": "^4.3.5",

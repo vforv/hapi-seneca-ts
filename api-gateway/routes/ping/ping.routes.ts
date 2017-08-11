@@ -3,17 +3,17 @@ import { HapiServer } from '../../sever-types';
 import { PingLogic } from '../../logic/ping/ping.logic';
 import { pingValidator } from '../../validators/ping/ping.validators';
 import * as Hapi from 'hapi';
+import { RoutesClass } from '../index';
 
 
 
-export class PingRoutes {
+export class PingRoutes implements RoutesClass {
+    public pingLogic = new PingLogic;
 
-    private pingLogic = new PingLogic;
-
-    constructor(private server: HapiServer) {
+    constructor(public server: any) {
     }
 
-    pingRoutes(): any {
+    register(): any {
         return [
             {
                 register: this.server.route({
