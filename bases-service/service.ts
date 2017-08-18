@@ -6,8 +6,8 @@ Seneca({tag: 'base'})
   .use('mesh', {
     isbase: true,
     port: 39999,
-    host: 'base',
-    bases: 'base:39999',
+    host: '@eth0',
+    // bases: 'base:39999',
     pin:'role:mesh',
     sneeze: {
       silent: true,

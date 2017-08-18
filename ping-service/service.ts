@@ -11,7 +11,7 @@ Seneca({ tag: 'ping' })
   .use('mesh', {
     pin: 'role:ping,cmd:date',
     host: '@eth0',
-    bases: 'base:39999'
+    // bases: 'base:39999'
   })
   .ready(() => {
     console.log("Ping service ready!!!")

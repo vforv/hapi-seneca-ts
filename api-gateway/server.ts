@@ -44,8 +44,8 @@ export class StartServer {
                         this.server.seneca
                             .use('mesh', {
                                 pin: 'role:ping,cmd:date',
-                                host: '@eth0',
-                                bases: 'base:39999'
+                                host: '@eth0'
+                                // bases: 'base:39999'
                             })
                             .ready(() => {
 
