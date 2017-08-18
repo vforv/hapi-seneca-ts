@@ -8,7 +8,9 @@ services:
   bases:
     image: vforv/bases:v1
     networks:
-        - trifacta
+      trifacta:
+        aliases: 
+          - base
   api:
     image: vforv/api-gateway:v1
     ports:
