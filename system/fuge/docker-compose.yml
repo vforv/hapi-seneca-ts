@@ -1,7 +1,7 @@
-version: '2'
+version: '3'
 services:
   bases:
-    image: vforv/hapi-seneca-ts:v1
+    image: vforv/bases:v1
     command: bash -c "cd bases-service && npm start"
     network_mode: "host"
   api:

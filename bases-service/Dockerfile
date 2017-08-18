@@ -19,3 +19,5 @@ COPY . /home/app/bases-service
 
 
 EXPOSE 39999
+
+CMD [ "npm", "start" ]

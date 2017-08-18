@@ -18,3 +18,5 @@ COPY . /home/app/api-gateway
 
 
 EXPOSE 5000
+
+CMD [ "npm", "start" ]

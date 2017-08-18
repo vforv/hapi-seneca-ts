@@ -19,3 +19,5 @@ COPY . /home/app/ping-service
 
 
 EXPOSE 39999
+
+CMD [ "npm", "start" ]
