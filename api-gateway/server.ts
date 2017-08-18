@@ -46,7 +46,7 @@ export class StartServer {
                             .use('mesh', {
                                 pin: 'role:ping,cmd:date',
                                 host: HOST,
-                                bases: BASES
+                                bases: [BASES]
                             })
                             .ready(() => {
 

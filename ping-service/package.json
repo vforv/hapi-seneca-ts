@@ -21,7 +21,7 @@
     "moment": "^2.18.1",
     "seneca": "^3.4.1",
     "seneca-balance-client": "^0.6.1",
-    "seneca-mesh": "^0.10.0"
+    "seneca-mesh": "^0.11.0"
   },
   "devDependencies": {
     "@types/code": "^4.0.3",
