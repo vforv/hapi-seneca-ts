@@ -5,9 +5,9 @@ Seneca({tag: 'base'})
   // .test('print')
   .use('mesh', {
     isbase: true,
-    port: 39000,
+    port: 39999,
     host: 'base',
-    bases: 'base:39000',
+    bases: 'base:39999',
     pin:'role:mesh',
     sneeze: {
       silent: true,

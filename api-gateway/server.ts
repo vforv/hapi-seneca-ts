@@ -19,7 +19,7 @@ export class StartServer {
             }
         });
     }
-    
+
     public connectServer(env: boolean): void {
 
         return this.server.register(Modlues, {
@@ -42,7 +42,11 @@ export class StartServer {
                     if (!env) {
                         // Starting the server
                         this.server.seneca
-                            .use('mesh')
+                            .use('mesh', {
+                                pin: 'role:ping,cmd:date',
+                                host: '@eth0',
+                                bases: 'base:39999'
+                            })
                             .ready(() => {
 
                                 this.server.start(() => {

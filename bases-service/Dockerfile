@@ -18,4 +18,6 @@ RUN cd bases-service && npm install;
 COPY . /home/app/bases-service
 
 
+EXPOSE 39999
+
 CMD cd bases-service ; npm start
