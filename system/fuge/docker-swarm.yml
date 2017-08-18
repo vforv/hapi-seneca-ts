@@ -1,0 +1,26 @@
+version: '3'
+
+networks:
+  trifacta:
+    driver: overlay
+
+services:
+  bases:
+    image: vforv/hapi-seneca-ts:v1
+    networks:
+      trifacta:
+        aliases: 
+          - bases
+    command: bash -c "cd bases-service && npm start"
+  api:
+    image: vforv/api-gateway:v1
+    ports:
+        - "5000:5000"
+    networks:
+        - trifacta
+    command: bash -c "cd api-gateway && npm start"
+  ping:
+    image: vforv/ping-service:v1
+    networks:
+        - trifacta
+    command: bash -c "cd ping-service && npm start"

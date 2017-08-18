@@ -1,16 +1,5 @@
-version: '2'
+version: '3'
 services:
   bases:
-    build: ../../bases-service
+    image: vforv/hapi-seneca-ts:v1
     command: bash -c "cd bases-service && npm start"
-    network_mode: "host"
-  api:
-    build: ../../api-gateway
-    ports:
-        - "5000:5000"
-    command: bash -c "cd api-gateway && npm start"
-    network_mode: "host"
-  ping:
-    build: ../../ping-service
-    command: bash -c "cd ping-service && npm start"
-    network_mode: "host"
