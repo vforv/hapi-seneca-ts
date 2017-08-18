@@ -1,6 +1,8 @@
 import * as Seneca from 'seneca';
 import { PingLogic } from './logic/ping.logic';
 
+const HOST = process.env.HOST;
+const BASES = process.env.BASES;
 
 const ping = new PingLogic
 
@@ -10,8 +12,8 @@ Seneca({ tag: 'ping' })
   .use(ping.getPing)
   .use('mesh', {
     pin: 'role:ping,cmd:date',
-    host: '@eth0',
-    // bases: 'base:39999'
+    host: HOST,
+    bases: BASES
   })
   .ready(() => {
     console.log("Ping service ready!!!")

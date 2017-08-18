@@ -4,7 +4,8 @@ import * as Seneca from "seneca";
 import * as Hapi from 'hapi';
 import { HapiServer } from './sever-types';
 import { Modlues } from './modules/index';
-
+const HOST = process.env.HOST;
+const BASES = process.env.BASES;
 
 export class StartServer {
     public server: HapiServer = new Hapi.Server() as HapiServer;
@@ -44,8 +45,8 @@ export class StartServer {
                         this.server.seneca
                             .use('mesh', {
                                 pin: 'role:ping,cmd:date',
-                                host: '@eth0'
-                                // bases: 'base:39999'
+                                host: HOST,
+                                bases: BASES
                             })
                             .ready(() => {
 

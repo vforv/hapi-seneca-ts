@@ -1,13 +1,16 @@
 import * as Seneca from 'seneca';
 
+const HOST = process.env.HOST;
+const PORT = process.env.PORT;
+const BASES = process.env.BASES;
 
 Seneca({tag: 'base'})
   // .test('print')
   .use('mesh', {
     isbase: true,
-    port: 39999,
-    host: '@eth0',
-    // bases: 'base:39999',
+    port: PORT,
+    host: HOST,
+    bases: BASES,
     pin:'role:mesh',
     sneeze: {
       silent: true,
