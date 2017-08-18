@@ -20,4 +20,4 @@ COPY . /home/app/bases-service
 
 EXPOSE 39999
 
-CMD [ "npm", "start" ]
+CMD cd bases-service ; npm start

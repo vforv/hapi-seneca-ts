@@ -19,4 +19,4 @@ COPY . /home/app/api-gateway
 
 EXPOSE 5000
 
-CMD [ "npm", "start" ]
+CMD cd api-gateway ; npm start

@@ -20,4 +20,4 @@ COPY . /home/app/ping-service
 
 EXPOSE 39999
 
-CMD [ "npm", "start" ]
+CMD cd ping-service ; npm start
