@@ -1,6 +1,5 @@
 pipeline {
     agent any
-    stages {
         stage('Build') {
             steps {
                 sh '''
@@ -23,5 +22,4 @@ pipeline {
             junit 'build/reports/**/*.xml'
             }
         }
-    }
 }
