@@ -1,6 +1,5 @@
 throttle(['throttleDocker']) {
   node('agent1') {
-    wrap([$class: 'AnsiColorBuildWrapper']) {
       try{
         stage('Setup') {
           checkout scm
@@ -17,6 +16,5 @@ throttle(['throttleDocker']) {
           '''
         }
       }
-    }
   }
 }
