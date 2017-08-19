@@ -5,7 +5,7 @@ cd ../
 mkdir -p $HOME/.cache/yarn
 mkdir -p $HOME/.nuget
 
-docker-compose -f docker-compose-test.yml -p dev up -d --build
+docker-compose -f docker-compose-test.yml -p dev-test up -d --build
 docker-compose -p dev logs -f &
 pid=$!
 
