@@ -1,0 +1,22 @@
+throttle(['throttleDocker']) {
+  node('docker') {
+    wrap([$class: 'AnsiColorBuildWrapper']) {
+      try{
+        stage('Setup') {
+          checkout scm
+          sh '''
+            ./ci/docker-down.sh
+            ./ci/docker-up.sh
+          '''
+        }
+      }
+      finally {
+        stage('Cleanup') {
+          sh '''
+            ./ci/docker-down.sh
+          '''
+        }
+      }
+    }
+  }
+}

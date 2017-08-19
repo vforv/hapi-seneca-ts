@@ -1,16 +1,16 @@
 version: '3'
 services:
   bases:
-    image: vforv/bases:v1
-    command: bash -c "cd bases-service && npm start"
+    build: ../../bases-service
     network_mode: "host"
+    command: bash -c "cd bases-service && npm start"
   api:
-    image: vforv/api-gateway:v1
+    build: ../../api-gateway
     ports:
         - "5000:5000"
+    network_mode: "host"
     command: bash -c "cd api-gateway && npm start"
-    network_mode: "host"
   ping:
-    image: vforv/ping-service:v1
-    command: bash -c "cd ping-service && npm start"
+    build: ../../ping-service
     network_mode: "host"
+    command: bash -c "cd ping-service && npm start"

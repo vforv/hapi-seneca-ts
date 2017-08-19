@@ -8,13 +8,9 @@ services:
   bases:
     image: vforv/bases:v1
     networks:
-      trifacta:
-        aliases: 
-          - bases
+        - trifacta
     environment:
-      PORT: 39000
       HOST: bases
-      BASES: bases:39000
     command: bash -c "cd bases-service && npm start"
   api:
     image: vforv/api-gateway:v1
@@ -23,14 +19,14 @@ services:
     networks:
         - trifacta
     environment:
-      HOST: '@eth0'
-      BASES: bases:39000
+      HOST:  api
+      BASES: bases
     command: bash -c "cd api-gateway && npm start"
   ping:
     image: vforv/ping-service:v1
     networks:
         - trifacta
     environment:
-      HOST: '@eth0'
-      BASES: bases:39000
+       HOST:  ping
+      BASES: bases
     command: bash -c "cd ping-service && npm start"
