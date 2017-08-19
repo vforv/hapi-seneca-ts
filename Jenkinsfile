@@ -1,5 +1,5 @@
 throttle(['throttleDocker']) {
-  node('docker') {
+  node('agent1') {
     wrap([$class: 'AnsiColorBuildWrapper']) {
       try{
         stage('Setup') {
