@@ -1,30 +1,21 @@
-throttle(['throttleDocker']) {
-  node('agent1') {
-      try{
-        stage('Setup') {
-          checkout scm
-          sh '''
-            ./system/fuge/ci/docker-down.sh
-            ./system/fuge/ci/docker-up.sh
-          '''
-        }
-
-        stage('Test') {
-               sh '''
-                  ./system/init.sh
-                  ./system/fuge/test.sh
+pipeline {
+    agent any
+    stages {
+        stage('Build') {
+            steps {
+                sh '''
+                  ./system/fuge/ci/docker-up.sh
+                  ./system/fuge/ci/docker-down.sh
                 '''
+            }
         }
-      }
-      catch (err) {
-        echo "Failed: ${err}"
-      }
-      finally {
-        stage('Cleanup') {
-          sh '''
-            ./system/fuge/ci/docker-down.sh
-          '''
+        
+        stage('Test') {
+            steps {
+                sh '''
+                 ./system/fuge/ci/docker-up-test.sh
+               '''
+            }
         }
-      }
-  }
+    }
 }
