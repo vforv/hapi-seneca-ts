@@ -5,15 +5,15 @@ throttle(['throttleDocker']) {
         stage('Setup') {
           checkout scm
           sh '''
-            ./ci/docker-down.sh
-            ./ci/docker-up.sh
+            ./system/fuge/ci/docker-down.sh
+            ./system/fuge/ci/docker-up.sh
           '''
         }
       }
       finally {
         stage('Cleanup') {
           sh '''
-            ./ci/docker-down.sh
+            ./system/fuge/ci/docker-down.sh
           '''
         }
       }
