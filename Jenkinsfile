@@ -8,6 +8,12 @@ throttle(['throttleDocker']) {
             ./system/fuge/ci/docker-up.sh
           '''
         }
+
+        stage('Unit Test') {
+          sh '''
+            ./system/fuge/test.sh
+          '''
+        }
       }
       finally {
         stage('Cleanup') {
