@@ -1,5 +1,6 @@
 pipeline {
     agent any
+    stages {
         stage('Build') {
             steps {
                 sh '''
@@ -16,10 +17,11 @@ pipeline {
                '''
             }
         }
-
+      }
         post {
         always {
             junit 'build/reports/**/*.xml'
             }
         }
+    
 }
