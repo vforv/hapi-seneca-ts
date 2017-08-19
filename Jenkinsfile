@@ -9,7 +9,7 @@ throttle(['throttleDocker']) {
           '''
         }
 
-        stage('Unit Test') {
+        stage('Test') {
           sh '''
             ./system/fuge/test.sh
           '''
