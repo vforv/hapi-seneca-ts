@@ -4,7 +4,7 @@
   "description": "Boilerplate template hapi typescript",
   "main": "server.ts",
   "scripts": {
-    "test": "lab -a code -t 100 -L -v -T ./node_modules/lab-transform-typescript",
+    "test": "lab -a code -t 90 -L -v -T ./node_modules/lab-transform-typescript",
     "test-coverage": "lab  -c -a code -r html -o coverage/coverage.html --sourcemaps --transform node_modules/lab-transform-typescript",
     "start": "node ../dist/api-gateway/main.js",
     "prestart": "tsc && cp -rf node_modules ../dist/api-gateway && npm run copyjson",
