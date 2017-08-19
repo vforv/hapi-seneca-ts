@@ -2,7 +2,6 @@ version: '3'
 services:
   bases:
     build: ../../bases-service
-    network_mode: "host"
     environment:
       HOST: bases
     command: bash -c "cd bases-service && npm start"
@@ -10,14 +9,12 @@ services:
     build: ../../api-gateway
     ports:
         - "5000:5000"
-    network_mode: "host"
     environment:
        HOST: api
        BASES: bases
     command: bash -c "cd api-gateway && npm start"
   ping:
     build: ../../ping-service
-    network_mode: "host"
     environment:
        HOST: ping
        BASES: bases
