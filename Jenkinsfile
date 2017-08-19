@@ -10,10 +10,14 @@ throttle(['throttleDocker']) {
         }
 
         stage('Test') {
-          sh '''
-            ./system/fuge/test.sh
-          '''
+               sh '''
+                  ./system/init.sh
+                  ./system/fuge/test.sh
+                '''
         }
+      }
+      catch (err) {
+        echo "Failed: ${err}"
       }
       finally {
         stage('Cleanup') {
