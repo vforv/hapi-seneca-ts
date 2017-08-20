@@ -7,7 +7,7 @@
     "test": "test"
   },
   "scripts": {
-    "test": "lab -a code -t 100 -L -v -T ./node_modules/lab-transform-typescript",
+    "test": "lab -a code -t 100 -L -v -T ./node_modules/lab-transform-typescript -r junit -o ../test/ping.xml",
     "test-coverage": "lab  -c -a code -r html -o coverage/coverage.html --sourcemaps --transform node_modules/lab-transform-typescript",
     "start": "node ../dist/ping-service/service.js",
     "prestart": "tsc && cp -rf node_modules ../dist/ping-service && npm run copyjson",
