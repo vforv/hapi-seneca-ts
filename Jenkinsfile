@@ -19,6 +19,7 @@ pipeline {
                 sh '''
                  rm -rf system/fuge/test
                  ./system/fuge/ci/docker-up-test.sh
+                 chown -R master:master system/fuge/test
                '''
             }
         }

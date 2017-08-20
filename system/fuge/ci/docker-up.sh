@@ -8,7 +8,7 @@ mkdir -p $HOME/.cache/yarn
 mkdir -p $HOME/.nuget
 
 docker-compose -f docker-compose.yml -p dev up -d --build
-docker-compose -p dev logs -f &
+docker-compose -f docker-compose.yml -p dev logs -f &
 pid=$!
 
 for i in `seq 1 600`; do

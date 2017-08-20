@@ -1,0 +1,8 @@
+<testsuite tests="2" skipped="0" errors="0" failures="0" time="0.296">
+<testcase classname="Ping action Ping acction test timestamp" name="Ping action Ping acction test timestamp" time="0.254">
+
+    </testcase>
+<testcase classname="Ping action Ping acction test moment formated time" name="Ping action Ping acction test moment formated time" time="0.023">
+
+    </testcase>
+</testsuite>

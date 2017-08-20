@@ -9,7 +9,7 @@ services:
        BASES: bases
     volumes:
         - ./test:/home/app/test
-    command: bash -c "cd api-gateway && npm test && chown -R master:master *"
+    command: bash -c "cd api-gateway && npm test"
   ping:
     build: ../../ping-service
     environment:
@@ -17,4 +17,4 @@ services:
        BASES: bases
     volumes:
         - ./test:/home/app/test
-    command: bash -c "cd ping-service && npm test && chown -R master:master *"
+    command: bash -c "cd ping-service && npm test"
