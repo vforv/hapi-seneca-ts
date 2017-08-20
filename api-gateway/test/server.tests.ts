@@ -45,7 +45,7 @@ L.experiment('Server started', () => {
   
         server.inject('/v1/ping/formated', (response: any) => {
   
-            expect(response.payload).to.equal('mock');
+            expect(response.payload).to.equal('mock1');
             done();
         });
     });
