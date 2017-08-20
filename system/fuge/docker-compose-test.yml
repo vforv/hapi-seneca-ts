@@ -1,10 +1,5 @@
 version: '3'
 services:
-  bases:
-    build: ../../bases-service
-    environment:
-      HOST: bases
-    command: bash -c "cd bases-service && npm test"
   api:
     build: ../../api-gateway
     ports:
@@ -12,10 +7,14 @@ services:
     environment:
        HOST: api
        BASES: bases
+    volumes:
+       - test:/test
     command: bash -c "cd api-gateway && npm test"
   ping:
     build: ../../ping-service
     environment:
        HOST: ping
        BASES: bases
+    volumes:
+       - test:/test
     command: bash -c "cd ping-service && npm test"
