@@ -17,8 +17,9 @@ pipeline {
         stage('Test') {
             steps {
                 sh '''
-                 rm -rf system/fuge/test
+                 rm -rf system/fuge/test/*
                  ./system/fuge/ci/docker-up-test.sh
+                 ./system/fuge/ci/docker-down-test.sh
                '''
             }
         }
