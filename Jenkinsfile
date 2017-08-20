@@ -17,11 +17,9 @@ pipeline {
         stage('Test') {
             steps {
                 sh '''
-                 ./system/fuge/ci/docker-up-test.sh
-               '''
-               sh '''
                  mkdir -p test
-                 docker cp devtest_api_1:home/app/test/api.xml test/api.xml
+                 rm -rf test/*
+                 ./system/fuge/ci/docker-up-test.sh
                '''
             }
         }

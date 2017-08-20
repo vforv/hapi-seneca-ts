@@ -7,3 +7,4 @@ mkdir -p $HOME/.nuget
 
 docker-compose -f docker-compose-test.yml -p dev-test up -d --build
 docker-compose -p dev-test logs -f &
+exit 0
