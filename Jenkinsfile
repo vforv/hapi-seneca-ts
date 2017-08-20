@@ -1,7 +1,7 @@
 
 pipeline {
     
-    agent any
+    agent { node { label 'agent1' } }
     stages {
         stage('Build') {
             steps {
@@ -23,7 +23,7 @@ pipeline {
     
         post {
           always {
-            junit 'test/*.xml'
+            junit './test/*.xml'
           }
         }
     
