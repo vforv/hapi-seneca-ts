@@ -47,7 +47,7 @@ L.experiment('Ping action', () => {
                 format: 'formated'
             },
             (err: any, out: any): any => {
-                let d = Moment().format('MMMM Do YYYY, h:mm:ss a');
+                let d = Moment().format('MMMM Do YYYY, h:mm:ss');
 
                 expect(d).to.equal(out.date)
                 
