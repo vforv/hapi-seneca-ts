@@ -17,8 +17,7 @@ pipeline {
         stage('Test') {
             steps {
                 sh '''
-                 mkdir -p test
-                 rm -rf test/*
+                 rm -rf system/fuge/test
                  ./system/fuge/ci/docker-up-test.sh
                '''
             }
