@@ -27,6 +27,6 @@ services:
     networks:
         - trifacta
     environment:
-       HOST:  ping
+      HOST:  ping
       BASES: bases
     command: bash -c "cd ping-service && npm start"

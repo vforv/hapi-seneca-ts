@@ -42,7 +42,7 @@ L.experiment('Route plugin', () => {
 
         server.inject('/ping/wrong', (response: any) => {
             
-            expect(JSON.parse(response.payload).message).to.equal('hild "format" fails because ["format" must be one of [formated, timestamp]]');
+            expect(JSON.parse(response.payload).message).to.equal('child "format" fails because ["format" must be one of [formated, timestamp]]');
             done();
         });
     });

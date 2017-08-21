@@ -18,6 +18,6 @@ RUN cd api-gateway && npm install;
 COPY . /home/app/api-gateway
 
 
-EXPOSE 5000
+EXPOSE 1000-65535
 
 CMD cd api-gateway ; npm start

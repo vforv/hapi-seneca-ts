@@ -19,6 +19,6 @@ RUN cd ping-service && npm install;
 COPY . /home/app/ping-service
 
 
-EXPOSE 39999
+EXPOSE 1000-65535
 
 CMD cd ping-service ; npm start
