@@ -45,24 +45,33 @@ export class StartServer {
                     if (!env) {
                         // Starting the server
                         this.server.seneca
-                            .use('registry-consul',{host: REGISTRY, port:"8500"})
+                            .use('consul-registry', {
+                                host: REGISTRY,
+                                port: "8500"
+                            })
                             .use('mesh', {
                                 auto: true,
                                 host: HOST,
-                                bases: [`${BASES}:39999`],
+                                // bases: [`${BASES}:39999`],
                                 discover: {
                                     // multicast: {
-                                    //     address: BROADCAST
+                                    //   address: BROADCAST
                                     // },
-                                    registry: {host: REGISTRY, port:"8500"}
-                                },
-                                dumpnet: false,
-                                listen: [
-                                    {
-                                        pin: 'role:ping,cmd:date',
-                                        host: HOST
+                                    // registry: {
+                                    //   host: '127.0.0.1',
+                                    //   port: "39999"
+                                    // }
+                                    registry: {
+                                        active: true
                                     }
-                                ]
+                                },
+                                // dumpnet: false,
+                                // listen: [
+                                //     {
+                                //         pin: 'role:ping,cmd:date',
+                                //         host: HOST
+                                //     }
+                                // ]
                             })
                             .ready(() => {
 
