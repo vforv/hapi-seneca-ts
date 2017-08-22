@@ -1,0 +1,62 @@
+{
+  "name": "hapi-typescript-starter",
+  "version": "1.0.0",
+  "description": "Boilerplate template hapi typescript",
+  "main": "server.ts",
+  "scripts": {
+    "test": "lab -a code -t 90 -L -v -T ./node_modules/lab-transform-typescript -r junit -o ../test/api.xml -r console -o stdout",
+    "test-coverage": "lab  -c -a code -r html -o coverage/coverage.html --sourcemaps --transform node_modules/lab-transform-typescript",
+    "start": "node ../dist/api-gateway/main.js",
+    "prestart": "tsc && cp -rf node_modules ../dist/api-gateway && npm run copyjson",
+    "copyjson": "copyfiles -e \"../api-gateway/**/node_modules/**\" -u 1 \"../api-gateway/**/**.json\" \"../dist\""
+  },
+  "keywords": [
+    "typescipt",
+    "hapi"
+  ],
+  "author": "Vladimir Djukic",
+  "license": "ISC",
+  "dependencies": {
+    "blipp": "^2.3.0",
+    "boom": "^5.2.0",
+    "chairo": "^3.0.0",
+    "entity": "0.0.0",
+    "hapi": "^16.5.0",
+    "hapi-swagger": "^7.7.0",
+    "inert": "^4.2.1",
+    "joi": "^10.6.0",
+    "labbable": "^2.1.1",
+    "nconf": "^0.8.4",
+    "path": "^0.12.7",
+    "seneca": "^3.4.1",
+    "seneca-balance-client": "^0.6.1",
+    "seneca-demo-logger": "^0.2.0",
+    "seneca-entity": "^2.0.2",
+    "seneca-mesh": "^0.11.0",
+    "vision": "^4.1.1",
+    "good": "^7.0.1",
+    "good-console": "^6.1.2",
+    "good-squeeze": "^3.0.1"
+  },
+  "devDependencies": {
+    "@types/boom": "^4.3.5",
+    "@types/code": "^4.0.3",
+    "@types/hapi": "^16.1.7",
+    "@types/joi": "^10.4.0",
+    "@types/lab": "^11.1.0",
+    "@types/nconf": "0.0.34",
+    "@types/node": "^8.0.16",
+    "@types/seneca": "^2.1.7",
+    "@types/sinon": "^2.3.3",
+    "code": "^4.1.0",
+    "copyfiles": "^1.2.0",
+    "lab": "^14.1.1",
+    "lab-transform-typescript": "^3.0.1",
+    "nodemon": "^1.11.0",
+    "rimraf": "^2.6.1",
+    "seneca-stub": "^1.2.2",
+    "sinon": "^2.4.1",
+    "ts-node": "^3.3.0",
+    "typescript": "^2.4.2"
+  }
+}

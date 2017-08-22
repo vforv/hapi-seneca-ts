@@ -1,0 +1,28 @@
+{
+  "name": "hapi-typescript-starter",
+  "version": "1.0.0",
+  "description": "Boilerplate template hapi typescript",
+  "main": "server.ts",
+  "scripts": {
+    "fuge": "fuge shell fuge/compose-dev.yml",
+    "fuge:built": "fuge shell fuge/compose-built.yml",
+    "init": "./init.sh",
+    "build": "./build.sh && npm run copyjson && npm run copysys",
+    "copyjson": "copyfiles -e \"../**/node_modules/**\" -u 1 \"../**/*.json\" \"../dist\"",
+    "copysys": "cp -rf ../system ../dist/",
+    "prebuild": "rimraf ../dist",
+    "repl": "rlwrap telnet localhost 30303"
+  },
+  "keywords": [
+    "typescipt",
+    "hapi"
+  ],
+  "author": "Vladimir Djukic",
+  "license": "ISC",
+  "devDependencies": {
+  },
+  "dependencies": {
+    "copyfiles": "^1.2.0",
+    "fuge": "^2.0.2"
+  }
+}

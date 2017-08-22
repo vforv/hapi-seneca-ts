@@ -1,0 +1,32 @@
+version: '3'
+
+networks:
+  trifacta:
+    driver: overlay
+
+services:
+  bases:
+    image: vforv/bases:v1
+    networks:
+        - trifacta
+    environment:
+      HOST: bases
+    command: bash -c "cd bases-service && npm start"
+  api:
+    image: vforv/api-gateway:v1
+    ports:
+        - "5000:5000"
+    networks:
+        - trifacta
+    environment:
+      HOST:  api
+      BASES: bases
+    command: bash -c "cd api-gateway && npm start"
+  ping:
+    image: vforv/ping-service:v1
+    networks:
+        - trifacta
+    environment:
+      HOST:  ping
+      BASES: bases
+    command: bash -c "cd ping-service && npm start"

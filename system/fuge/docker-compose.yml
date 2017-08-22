@@ -1,0 +1,27 @@
+version: '3'
+services:
+  bases:
+    build: ../../bases-service
+    environment:
+      HOST: bases
+    volumes:
+        - ./test:/home/app/test
+    command: bash -c "cd bases-service && npm start"
+  api:
+    build: ../../api-gateway
+    ports:
+        - "5000:5000"
+    environment:
+       HOST: api
+       BASES: bases
+    volumes:
+        - ./test:/home/app/test
+    command: bash -c "cd api-gateway && npm start"
+  ping:
+    build: ../../ping-service
+    environment:
+       HOST: ping
+       BASES: bases
+    volumes:
+        - ./test:/home/app/test
+    command: bash -c "cd ping-service && npm start"

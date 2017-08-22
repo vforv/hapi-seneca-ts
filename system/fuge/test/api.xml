@@ -1,0 +1,14 @@
+<testsuite tests="4" skipped="0" errors="0" failures="0" time="0.098">
+<testcase classname="Route plugin Route plugin should work" name="Route plugin Route plugin should work" time="0.003">
+
+    </testcase>
+<testcase classname="Route plugin Route plugin should register route" name="Route plugin Route plugin should register route" time="0.021">
+
+    </testcase>
+<testcase classname="Server started initializes." name="Server started initializes." time="0">
+
+    </testcase>
+<testcase classname="Server started Ping route test" name="Server started Ping route test" time="0.016">
+
+    </testcase>
+</testsuite>

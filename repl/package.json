@@ -1,0 +1,20 @@
+{
+  "name": "monitor",
+  "version": "1.0.0",
+  "description": "",
+  "main": "monitor.ts",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "seneca": "^3.4.1",
+    "seneca-balance-client": "^0.6.1",
+    "seneca-mesh": "^0.10.0",
+    "seneca-repl": "^1.1.2"
+  },
+  "devDependencies": {
+    "typescript": "^2.4.2"
+  }
+}

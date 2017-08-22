@@ -1,0 +1,39 @@
+{
+  "name": "ping-service",
+  "version": "1.0.0",
+  "description": "Test service",
+  "main": "service.ts",
+  "directories": {
+    "test": "test"
+  },
+  "scripts": {
+    "test": "lab -a code -t 100 -L -v -T ./node_modules/lab-transform-typescript -r junit -o ../test/ping.xml -r console -o stdout",
+    "test-coverage": "lab  -c -a code -r html -o coverage/coverage.html --sourcemaps --transform node_modules/lab-transform-typescript",
+    "start": "node ../dist/ping-service/service.js",
+    "prestart": "tsc && cp -rf node_modules ../dist/ping-service && npm run copyjson",
+    "copyjson": "copyfiles -e \"../ping-service/**/node_modules/**\" -u 1 \"../ping-service/**/**.json\" \"../dist\"",
+    "v": "tsc -v"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "@types/moment": "^2.13.0",
+    "moment": "^2.18.1",
+    "seneca": "^3.4.1",
+    "seneca-balance-client": "^0.6.1",
+    "seneca-mesh": "^0.11.0"
+  },
+  "devDependencies": {
+    "@types/code": "^4.0.3",
+    "@types/lab": "^11.1.0",
+    "@types/node": "^8.0.17",
+    "@types/seneca": "^2.1.7",
+    "@types/sinon": "^2.3.3",
+    "code": "^4.1.0",
+    "copyfiles": "^1.2.0",
+    "lab": "^14.1.1",
+    "lab-transform-typescript": "^3.0.1",
+    "sinon": "^2.4.1",
+    "typescript": "^2.3.2"
+  }
+}
