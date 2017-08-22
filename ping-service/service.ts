@@ -12,7 +12,7 @@ const ping = new PingLogic
 Seneca()
   // .test('print')
   .use(ping.getPing)
-  .use('consul_registry',{host: REGISTRY, port:"8500"})
+  .use('registry-consul',{host: REGISTRY, port:"8500"})
   .use('mesh', {
     auto: true,
     host: HOST,

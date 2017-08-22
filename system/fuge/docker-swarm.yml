@@ -5,34 +5,6 @@ networks:
     driver: overlay
 
 services:
-  bases:
-    image: vforv/bases:v1
-    networks:
-        - trifacta
-    environment:
-      HOST: bases
-      REGISTRY: consul
-    command: bash -c "cd bases-service && npm start"
-  api:
-    image: vforv/api-gateway:v1
-    ports:
-        - "5000:5000"
-    networks:
-        - trifacta
-    environment:
-      HOST:  api
-      BASES: bases
-      REGISTRY: consul
-    command: bash -c "cd api-gateway && npm start"
-  ping:
-    image: vforv/ping-service:v1
-    networks:
-        - trifacta
-    environment:
-      HOST:  ping
-      BASES: bases
-      REGISTRY: consul
-    command: bash -c "cd ping-service && npm start"
   consul:
     image: sdelrio/consul${TAG}
     labels: [app=consul]
@@ -61,3 +33,32 @@ services:
             parallelism: 1
             delay: 10s
             failure_action: continue
+  bases:
+    image: vforv/bases:v2
+    networks:
+        - trifacta
+    environment:
+      HOST: bases
+      REGISTRY: consul
+    command: bash -c "cd bases-service && npm start"
+  api:
+    image: vforv/api-gateway:v2
+    ports:
+        - "5000:5000"
+    networks:
+        - trifacta
+    environment:
+      HOST:  api
+      BASES: bases
+      REGISTRY: consul
+    command: bash -c "cd api-gateway && npm start"
+  ping:
+    image: vforv/ping-service:v2
+    networks:
+        - trifacta
+    environment:
+      HOST:  ping
+      BASES: bases
+      REGISTRY: consul
+    command: bash -c "cd ping-service && npm start"
+  

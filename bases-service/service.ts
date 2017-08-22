@@ -6,7 +6,7 @@ const REGISTRY = process.env.REGISTRY
 
 Seneca()
   // .test('print')
-  .use('consul_registry',{host: REGISTRY, port:"8500"})
+  .use('registry-consul',{host: REGISTRY, port:"8500"})
   .use('mesh', {
     isbase: true,
     host: HOST,

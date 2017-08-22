@@ -45,7 +45,7 @@ export class StartServer {
                     if (!env) {
                         // Starting the server
                         this.server.seneca
-                            .use('consul_registry',{host: REGISTRY, port:"8500"})
+                            .use('registry-consul',{host: REGISTRY, port:"8500"})
                             .use('mesh', {
                                 auto: true,
                                 host: HOST,
