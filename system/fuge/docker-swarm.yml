@@ -43,7 +43,6 @@ services:
       HOST:  ping
       BASES: bases
       CONSUL: consul
-      CONSUL_CHECK_LEADER: true
       CONSUL_BIND_INTERFACE: consul
     deploy:
         replicas: 3
