@@ -6,6 +6,8 @@ import { HapiServer } from './sever-types';
 import { Modlues } from './modules/index';
 const HOST = process.env.HOST;
 const BASES = process.env.BASES;
+const BROADCAST = process.env.BROADCAST
+const REGISTRY = process.env.REGISTRY
 
 export class StartServer {
     public server: HapiServer = new Hapi.Server() as HapiServer;
@@ -43,10 +45,18 @@ export class StartServer {
                     if (!env) {
                         // Starting the server
                         this.server.seneca
+                            .use('consul-registry', REGISTRY || {})
                             .use('mesh', {
                                 auto: true,
                                 host: HOST,
                                 bases: [`${BASES}:39999`],
+                                discover: {
+                                    // multicast: {
+                                    //     address: BROADCAST
+                                    // },
+                                    registry: {host: REGISTRY, port: 8500}
+                                },
+                                dumpnet: false,
                                 listen: [
                                     {
                                         pin: 'role:ping,cmd:date',
