@@ -17,7 +17,6 @@ RUN cd api-gateway && npm install;
 # Bundle app source
 COPY . /home/app/api-gateway
 
-
 EXPOSE 50000-65535
 EXPOSE 50000-65535/udp
 
