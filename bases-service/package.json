@@ -13,6 +13,7 @@
   "dependencies": {
     "seneca": "^3.4.1",
     "seneca-balance-client": "^0.6.1",
+    "seneca-consul-registry": "^0.1.0",
     "seneca-mesh": "^0.11.0"
   },
   "devDependencies": {

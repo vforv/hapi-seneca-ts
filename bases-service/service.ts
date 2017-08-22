@@ -6,7 +6,7 @@ const REGISTRY = process.env.REGISTRY
 
 Seneca()
   // .test('print')
-  .use('consul-registry', REGISTRY || {})
+  .use('consul_registry',{host: REGISTRY, port:"8500"})
   .use('mesh', {
     isbase: true,
     host: HOST,
@@ -15,7 +15,7 @@ Seneca()
       // multicast: {
       //   address: BROADCAST
       // },
-      registry: {host: REGISTRY, port: 8500}
+      registry: {host: REGISTRY, port: "8500"}
     },
     dumpnet: false,
     sneeze: {

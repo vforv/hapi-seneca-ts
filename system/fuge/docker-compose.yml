@@ -5,6 +5,7 @@ services:
     build: ../../bases-service
     environment:
       HOST: bases
+      REGISTRY: 127.0.0.1
     volumes:
         - ./test:/home/app/test
     command: bash -c "cd bases-service && npm start"
@@ -15,6 +16,7 @@ services:
     environment:
        HOST: api
        BASES: bases
+       REGISTRY: 127.0.0.1
     volumes:
         - ./test:/home/app/test
     command: bash -c "cd api-gateway && npm start"
@@ -23,6 +25,7 @@ services:
     environment:
        HOST: ping
        BASES: bases
+       REGISTRY: 127.0.0.1
     volumes:
         - ./test:/home/app/test
     command: bash -c "cd ping-service && npm start"

@@ -21,6 +21,9 @@
     "boom": "^5.2.0",
     "chairo": "^3.0.0",
     "entity": "0.0.0",
+    "good": "^7.0.1",
+    "good-console": "^6.1.2",
+    "good-squeeze": "^3.0.1",
     "hapi": "^16.5.0",
     "hapi-swagger": "^7.7.0",
     "inert": "^4.2.1",
@@ -30,13 +33,11 @@
     "path": "^0.12.7",
     "seneca": "^3.4.1",
     "seneca-balance-client": "^0.6.1",
+    "seneca-consul-registry": "^0.1.0",
     "seneca-demo-logger": "^0.2.0",
     "seneca-entity": "^2.0.2",
     "seneca-mesh": "^0.11.0",
-    "vision": "^4.1.1",
-    "good": "^7.0.1",
-    "good-console": "^6.1.2",
-    "good-squeeze": "^3.0.1"
+    "vision": "^4.1.1"
   },
   "devDependencies": {
     "@types/boom": "^4.3.5",

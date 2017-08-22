@@ -18,7 +18,6 @@ api:
   environment:
        HOST: 127.0.0.1
        BASES: 127.0.0.1
-
   run: ts-node main.ts
 ping:
   type: process

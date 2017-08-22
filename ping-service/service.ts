@@ -12,7 +12,7 @@ const ping = new PingLogic
 Seneca()
   // .test('print')
   .use(ping.getPing)
-  .use('consul-registry', REGISTRY || {})
+  .use('consul_registry',{host: REGISTRY, port:"8500"})
   .use('mesh', {
     auto: true,
     host: HOST,
@@ -21,7 +21,7 @@ Seneca()
       // multicast: {
       //   address: BROADCAST
       // },
-      registry: {host: REGISTRY, port: 8500}
+      registry: {host: REGISTRY, port: "8500"}
     },
     dumpnet: false,
     listen: [

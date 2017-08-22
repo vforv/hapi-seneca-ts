@@ -45,7 +45,7 @@ export class StartServer {
                     if (!env) {
                         // Starting the server
                         this.server.seneca
-                            .use('consul-registry', REGISTRY || {})
+                            .use('consul_registry',{host: REGISTRY, port:"8500"})
                             .use('mesh', {
                                 auto: true,
                                 host: HOST,
@@ -54,7 +54,7 @@ export class StartServer {
                                     // multicast: {
                                     //     address: BROADCAST
                                     // },
-                                    registry: {host: REGISTRY, port: 8500}
+                                    registry: {host: REGISTRY, port:"8500"}
                                 },
                                 dumpnet: false,
                                 listen: [
