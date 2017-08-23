@@ -4,6 +4,7 @@ export class PingLogic {
     constructor() { }
 
     getPing(req: HapiRequest, reply: Hapi.ReplyNoContinue) {
+        
        req.seneca
             .act(
             {

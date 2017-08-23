@@ -6,7 +6,7 @@ import { HapiServer } from './sever-types';
 import { Modlues } from './modules/index';
 const HOST = process.env.HOST;
 const BASES = process.env.BASES;
-const BROADCAST = process.env.BROADCAST
+// const BROADCAST = process.env.BROADCAST
 const REGISTRY = process.env.REGISTRY
 
 export class StartServer {
@@ -46,13 +46,13 @@ export class StartServer {
                         // Starting the server
                         this.server.seneca
                             .use('consul-registry', {
-                                host: REGISTRY,
+                                host: `${REGISTRY}`,
                                 port: "8500"
                             })
                             .use('mesh', {
                                 auto: true,
                                 host: HOST,
-                                // bases: [`${BASES}:39999`],
+                                bases: [`${BASES}:39999`],
                                 discover: {
                                     // multicast: {
                                     //   address: BROADCAST

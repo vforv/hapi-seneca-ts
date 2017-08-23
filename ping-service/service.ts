@@ -3,7 +3,7 @@ import { PingLogic } from './logic/ping.logic';
 
 const HOST = process.env.HOST;
 const BASES = process.env.BASES;
-const BROADCAST = process.env.BROADCAST
+// const BROADCAST = process.env.BROADCAST
 const REGISTRY = process.env.REGISTRY
 
 const ping = new PingLogic
@@ -13,13 +13,14 @@ Seneca()
   // .test('print')cd 
   .use(ping.getPing)
   .use('consul-registry', {
-    host: REGISTRY,
+    host: `${REGISTRY}`,
     port: "8500"
   })
   .use('mesh', {
     auto: true,
     host: HOST,
-    // bases: [`${BASES}:39999`],
+    pin: 'role:ping,cmd:date',
+    bases: [`${BASES}:39999`],
     discover: {
       // multicast: {
       //   address: BROADCAST

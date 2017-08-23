@@ -1,8 +1,8 @@
 {
-  "name": "monitor",
+  "name": "repl",
   "version": "1.0.0",
   "description": "",
-  "main": "monitor.ts",
+  "main": "repl.ts",
   "scripts": {
     "start": "node ../dist/repl/repl.js",
     "prestart": "tsc && cp -rf node_modules ../dist/repl && npm run copyjson",

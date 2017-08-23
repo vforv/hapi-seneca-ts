@@ -2,7 +2,6 @@ import * as Seneca from 'seneca';
 const repl = require('seneca-repl');
 
 const HOST = process.env.HOST;
-const BROADCAST = process.env.BROADCAST;
 const REGISTRY = process.env.REGISTRY;
 
 Seneca({ tag: 'repl' })
