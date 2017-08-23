@@ -1,8 +1,8 @@
 import * as Seneca from 'seneca';
 
-const HOST = '127.0.0.1';
-const BROADCAST = process.env.BROADCAST
-const REGISTRY = '127.0.0.1';
+const HOST = process.env.HOST;
+const BROADCAST = process.env.BROADCAST;
+const REGISTRY = process.env.REGISTRY;
 
 Seneca()
   // .test('print')
