@@ -4,13 +4,16 @@
   "description": "",
   "main": "monitor.ts",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "start": "node ../dist/repl/repl.js",
+    "prestart": "tsc && cp -rf node_modules ../dist/repl && npm run copyjson",
+    "copyjson": "copyfiles -e \"../repl/**/node_modules/**\" -u 1 \"../repl/**/**.json\" \"../dist\""
   },
   "author": "",
   "license": "ISC",
   "dependencies": {
     "seneca": "^3.4.1",
     "seneca-balance-client": "^0.6.1",
+    "seneca-consul-registry": "^0.1.0",
     "seneca-mesh": "^0.10.0",
     "seneca-repl": "^1.1.2"
   },

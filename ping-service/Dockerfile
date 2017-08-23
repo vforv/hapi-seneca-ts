@@ -18,7 +18,6 @@ RUN cd ping-service && npm install;
 # Bundle app source
 COPY . /home/app/ping-service
 
-EXPOSE 50000-65535
-EXPOSE 50000-65535/udp
+EXPOSE 39999
 
 CMD cd ping-service ; npm start
