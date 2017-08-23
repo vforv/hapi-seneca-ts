@@ -19,7 +19,7 @@ Seneca()
   .use('mesh', {
     auto: true,
     host: HOST,
-    // bases: [`${BASES}:39999`],
+    bases: [`${BASES}:39999`],
     discover: {
       // multicast: {
       //   address: BROADCAST
@@ -33,12 +33,12 @@ Seneca()
       }
     },
     dumpnet: false,
-    listen: [
-      {
-        pin: 'role:ping,cmd:date',
-        host: HOST
-      }
-    ]
+    // listen: [
+    //   {
+    //     pin: 'role:ping,cmd:date',
+    //     host: HOST
+    //   }
+    // ]
   })
   .ready(() => {
     console.log("Ping service ready!!!")
