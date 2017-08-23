@@ -52,7 +52,7 @@ export class StartServer {
                             .use('mesh', {
                                 auto: true,
                                 host: HOST,
-                                bases: [`${BASES}:39999`],
+                                // bases: [`${BASES}:39999`],
                                 discover: {
                                     // multicast: {
                                     //   address: BROADCAST
