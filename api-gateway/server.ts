@@ -53,6 +53,7 @@ export class StartServer {
                                 auto: true,
                                 host: HOST,
                                 bases: [`${BASES}:39999`],
+                                pin: 'role:ping,cmd:date',
                                 discover: {
                                     // multicast: {
                                     //   address: BROADCAST
