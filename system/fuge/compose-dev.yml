@@ -11,22 +11,25 @@ bases:
   path: ../../bases-service
   environment:
       HOST: 127.0.0.1
-  run: ts-node service.ts
+      REGISTRY: 127.0.0.1
+  run: ts-node service.ts --seneca.log.print
 api:
   type: process
   path: ../../api-gateway
   environment:
        HOST: 127.0.0.1
        BASES: 127.0.0.1
-  run: ts-node main.ts
+       REGISTRY: 127.0.0.1
+  run: ts-node main.ts --seneca.log.print
 ping:
   type: process
   path: ../../ping-service
   environment:
        HOST: 127.0.0.1
        BASES: 127.0.0.1
-  run: ts-node service.ts
+       REGISTRY: 127.0.0.1
+  run: ts-node service.ts --seneca.log.print
 repl:
   type: process
   path: ../../repl
-  run: ts-node repl.ts
+  run: ts-node repl.ts --seneca.log.print

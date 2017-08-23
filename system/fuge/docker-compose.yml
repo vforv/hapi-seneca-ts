@@ -3,28 +3,31 @@ version: '3'
 services:
   bases:
     build: ../../bases-service
+    network_mode: "host"
     environment:
-      HOST: bases
+      HOST: 127.0.0.1
       REGISTRY: 127.0.0.1
     volumes:
         - ./test:/home/app/test
     command: bash -c "cd bases-service && npm start"
   api:
     build: ../../api-gateway
+    network_mode: "host"
     ports:
         - "5000:5000"
     environment:
-       HOST: api
-       BASES: bases
+       HOST: 127.0.0.1
+       BASES: 127.0.0.1
        REGISTRY: 127.0.0.1
     volumes:
         - ./test:/home/app/test
     command: bash -c "cd api-gateway && npm start"
   ping:
     build: ../../ping-service
+    network_mode: "host"
     environment:
-       HOST: ping
-       BASES: bases
+       HOST: 127.0.0.1
+       BASES: 127.0.0.1
        REGISTRY: 127.0.0.1
     volumes:
         - ./test:/home/app/test
