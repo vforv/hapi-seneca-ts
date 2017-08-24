@@ -36,7 +36,8 @@ export const Modlues = [
                     args: [{
                         log: '*',
                         request: '*',
-                        response: '*'
+                        response: '*',
+                        error: '*'
                     }]
                 }, {
                     module: 'good-console'

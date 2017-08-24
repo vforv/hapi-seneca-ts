@@ -10,7 +10,7 @@ const BASES = process.env.BASES;
 const REGISTRY = process.env.REGISTRY
 
 export class StartServer {
-    public server: HapiServer = new Hapi.Server({ debug: { request: ['error'] } }) as HapiServer;
+    public server: HapiServer = new Hapi.Server() as HapiServer;
 
     constructor() {
         const port = getServerConfigs().port;
@@ -46,10 +46,15 @@ export class StartServer {
                         // Starting the server
                         this.server.seneca
                             .use('mesh', {
-                                auto: true,
+                                // auto: true,
                                 host: HOST,
                                 bases: [`${BASES}:39999`],
-                                pin: 'role:ping,cmd:date'
+                                // listen: [
+                                //     {
+                                //         pins: ['role:ping,cmd:date'],
+                                //         host: HOST
+                                //     }
+                                // ]
                             })
                             .ready(() => {
 
