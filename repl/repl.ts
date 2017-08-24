@@ -2,7 +2,7 @@ import * as Seneca from 'seneca';
 const repl = require('seneca-repl');
 
 const HOST = process.env.HOST;
-const HOST1 = process.env.HOST;
+const HOST1 = process.env.HOST1;
 const REGISTRY = process.env.REGISTRY;
 const BASES = process.env.BASES;
 
