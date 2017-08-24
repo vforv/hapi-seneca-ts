@@ -10,7 +10,7 @@ const BASES = process.env.BASES;
 const REGISTRY = process.env.REGISTRY
 
 export class StartServer {
-    public server: HapiServer = new Hapi.Server() as HapiServer;
+    public server: HapiServer = new Hapi.Server({ debug: { request: ['error'] } }) as HapiServer;
 
     constructor() {
         const port = getServerConfigs().port;

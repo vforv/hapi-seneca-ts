@@ -11,9 +11,9 @@ Seneca({ tag: 'repl' })
     port: "8500"
   })
   .use('mesh', {
+    tag: null,
     auto: true,
     host: HOST,
-    // bases: [`${BASES}:39999`],
     discover: {
       // multicast: {
       //   address: BROADCAST

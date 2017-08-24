@@ -19,15 +19,18 @@
   "dependencies": {
     "@types/moment": "^2.13.0",
     "moment": "^2.18.1",
+    "pino": "^4.7.1",
     "seneca": "^3.4.1",
     "seneca-balance-client": "^0.6.1",
     "seneca-consul-registry": "^0.1.0",
+    "seneca-demo-logger": "^0.2.0",
     "seneca-mesh": "^0.11.0"
   },
   "devDependencies": {
     "@types/code": "^4.0.3",
     "@types/lab": "^11.1.0",
     "@types/node": "^8.0.17",
+    "@types/pino": "^4.7.0",
     "@types/seneca": "^2.1.7",
     "@types/sinon": "^2.3.3",
     "code": "^4.1.0",

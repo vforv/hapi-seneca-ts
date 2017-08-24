@@ -40,7 +40,7 @@ services:
     networks:
         - trifacta
     environment:
-      HOST:  ping
+      HOST:  @eth0
       BASES: bases
       REGISTRY: consul
     command: bash -c "cd ping-service && npm start"

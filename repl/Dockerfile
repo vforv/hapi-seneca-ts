@@ -19,6 +19,6 @@ RUN cd repl && npm install;
 COPY . /home/app/repl
 
 
-EXPOSE 39999
+EXPOSE 10001
 
 CMD cd repl ; npm start

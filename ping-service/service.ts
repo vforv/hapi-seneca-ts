@@ -9,7 +9,11 @@ const REGISTRY = process.env.REGISTRY
 const ping = new PingLogic
 
 
-Seneca()
+Seneca({
+  logger: require('seneca-demo-logger'),
+  debug: { short_logs: true }
+}
+)
   // .test('print')cd 
   .use(ping.getPing)
   .use('consul-registry', {
@@ -42,5 +46,5 @@ Seneca()
     // ]
   })
   .ready(() => {
-    console.log("Ping service ready!!!")
+    console.log(`Ping service ready!!! IP: ${HOST}`)
   })
