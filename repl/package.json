@@ -19,8 +19,17 @@
     "seneca-repl": "^1.1.2"
   },
   "devDependencies": {
-    "typescript": "^2.4.2",
+    "@types/code": "^4.0.3",
+    "@types/lab": "^11.1.0",
+    "@types/node": "^8.0.17",
+    "@types/pino": "^4.7.0",
+    "@types/seneca": "^2.1.7",
+    "@types/sinon": "^2.3.3",
+    "code": "^4.1.0",
     "copyfiles": "^1.2.0",
-    "@types/seneca": "^2.1.7"
+    "lab": "^14.1.1",
+    "lab-transform-typescript": "^3.0.1",
+    "sinon": "^2.4.1",
+    "typescript": "^2.3.2"
   }
 }
