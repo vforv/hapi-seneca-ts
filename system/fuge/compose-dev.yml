@@ -12,7 +12,7 @@ bases:
   environment:
       HOST: 127.0.0.1
       REGISTRY: 127.0.0.1
-  run: ts-node service.ts --seneca.log.print
+  run: ts-node service.ts
 api:
   type: process
   path: ../../api-gateway
@@ -20,7 +20,7 @@ api:
        HOST: 127.0.0.1
        BASES: 127.0.0.1
        REGISTRY: 127.0.0.1
-  run: ts-node main.ts --seneca.log.print
+  run: ts-node main.ts
 ping:
   type: process
   path: ../../ping-service
@@ -28,8 +28,8 @@ ping:
        HOST: 127.0.0.1
        BASES: 127.0.0.1
        REGISTRY: 127.0.0.1
-  run: ts-node service.ts --seneca.log.print
+  run: ts-node service.ts
 repl:
   type: process
   path: ../../repl
-  run: ts-node repl.ts --seneca.log.print
+  run: ts-node repl.ts
