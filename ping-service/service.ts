@@ -16,34 +16,11 @@ Seneca({
 )
   // .test('print')cd 
   .use(ping.getPing)
-  // .use('consul-registry', {
-  //   host: `${REGISTRY}`,
-  //   port: "8500"
-  // })
   .use('mesh', {
     auto: true,
     host: HOST,
     pin: 'role:ping,cmd:date',
-    bases: [`${BASES}:39999`],
-    // discover: {
-    //   // multicast: {
-    //   //   address: BROADCAST
-    //   // },
-    //   // registry: {
-    //   //   host: '127.0.0.1',
-    //   //   port: "39999"
-    //   // }
-    //   registry: {
-    //     active: true
-    //   }
-    // },
-    // dumpnet: false,
-    // listen: [
-    //   {
-    //     pin: 'role:ping,cmd:date',
-    //     host: HOST
-    //   }
-    // ]
+    bases: [`${BASES}:39999`]
   })
   .ready(() => {
     console.log(`Ping service ready!!! IP: ${HOST}`)

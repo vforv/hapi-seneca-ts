@@ -45,34 +45,11 @@ export class StartServer {
                     if (!env) {
                         // Starting the server
                         this.server.seneca
-                            // .use('consul-registry', {
-                            //     host: `${REGISTRY}`,
-                            //     port: "8500"
-                            // })
                             .use('mesh', {
                                 auto: true,
                                 host: HOST,
                                 bases: [`${BASES}:39999`],
-                                pin: 'role:ping,cmd:date',
-                                // discover: {
-                                //     // multicast: {
-                                //     //   address: BROADCAST
-                                //     // },
-                                //     // registry: {
-                                //     //   host: '127.0.0.1',
-                                //     //   port: "39999"
-                                //     // }
-                                //     registry: {
-                                //         active: true
-                                //     }
-                                // },
-                                // dumpnet: false,
-                                // listen: [
-                                //     {
-                                //         pin: 'role:ping,cmd:date',
-                                //         host: HOST
-                                //     }
-                                // ]
+                                pin: 'role:ping,cmd:date'
                             })
                             .ready(() => {
 
