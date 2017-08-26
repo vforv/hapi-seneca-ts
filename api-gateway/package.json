@@ -37,6 +37,7 @@
     "seneca-demo-logger": "^0.2.0",
     "seneca-entity": "^2.0.2",
     "seneca-mesh": "^0.11.0",
+    "seneca-mqlight-transport": "0.0.7",
     "vision": "^4.1.1"
   },
   "devDependencies": {

@@ -24,7 +24,8 @@
     "seneca-balance-client": "^0.6.1",
     "seneca-consul-registry": "^0.1.0",
     "seneca-demo-logger": "^0.2.0",
-    "seneca-mesh": "^0.11.0"
+    "seneca-mesh": "^0.11.0",
+    "seneca-mqlight-transport": "0.0.7"
   },
   "devDependencies": {
     "@types/code": "^4.0.3",

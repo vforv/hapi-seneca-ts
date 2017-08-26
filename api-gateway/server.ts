@@ -45,6 +45,8 @@ export class StartServer {
                     if (!env) {
                         // Starting the server
                         this.server.seneca
+                            .use('mqlight-transport', {})
+
                             .use('mesh', {
                                 // auto: true,
                                 host: HOST,
@@ -56,10 +58,7 @@ export class StartServer {
                                 //     }
                                 // ]
                             })
-                            .client({
-                                type: 'http',
-                                host: HOST
-                            })
+                            
                             .ready(() => {
 
                                 this.server.start(() => {

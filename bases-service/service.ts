@@ -6,10 +6,7 @@ const REGISTRY = process.env.REGISTRY;
 
 Seneca()
   // .test('print')
-  // .use('consul-registry', {
-  //   host: `${REGISTRY}`,
-  //   port: "8500"
-  // })
+  .use('mqlight-transport', {})
   .use('mesh', {
     isbase: true,
     host: HOST,
@@ -18,6 +15,10 @@ Seneca()
       silent: true,
       swim: { interval: 1111 }
     }
+  })
+  .listen({
+    type: 'mqlight',
+    host: HOST
   })
   .ready(function () {
     console.log("Bases ready!!!")

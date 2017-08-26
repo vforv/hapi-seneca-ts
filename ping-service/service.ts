@@ -16,6 +16,7 @@ Seneca({
 )
   // .test('print')cd 
   .use(ping.getPing)
+  .use('mqlight-transport', {})
   .use('mesh', {
     auto: true,
     host: HOST,
@@ -23,7 +24,7 @@ Seneca({
     bases: [`${BASES}:39999`]
   })
   .listen({
-    type: 'http',
+    type: 'mqlight',
     host: HOST
   })
   .ready(() => {
