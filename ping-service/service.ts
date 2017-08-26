@@ -22,6 +22,10 @@ Seneca({
     pin: 'role:ping,cmd:date',
     bases: [`${BASES}:39999`]
   })
+  .listen({
+    type: 'http',
+    host: HOST
+  })
   .ready(() => {
     console.log(`Ping service ready!!! IP: ${HOST}`)
   })

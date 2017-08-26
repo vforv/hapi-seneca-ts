@@ -4,6 +4,7 @@ interface SenecaMethods {
     act: (pattern: object | string, cb: (err: any, reply: object) => object | Hapi.Response) => object;
     add: (pattern: object | string, cb: (message: any, next: any) => object | Hapi.Response) => object;
     use: any;
+    client: any;
 }
 
 export interface HapiServer extends Hapi.Server {

@@ -56,6 +56,10 @@ export class StartServer {
                                 //     }
                                 // ]
                             })
+                            .client({
+                                type: 'http',
+                                host: HOST
+                            })
                             .ready(() => {
 
                                 this.server.start(() => {

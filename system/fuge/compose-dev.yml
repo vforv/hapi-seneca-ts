@@ -11,7 +11,6 @@ bases:
   path: ../../bases-service
   environment:
       HOST: 127.0.0.1
-      REGISTRY: 127.0.0.1
   run: ts-node service.ts
 api:
   type: process
@@ -19,7 +18,6 @@ api:
   environment:
        HOST: 127.0.0.1
        BASES: 127.0.0.1
-       REGISTRY: 127.0.0.1
   run: ts-node main.ts
 ping:
   type: process
@@ -27,9 +25,11 @@ ping:
   environment:
        HOST: 127.0.0.1
        BASES: 127.0.0.1
-       REGISTRY: 127.0.0.1
   run: ts-node service.ts
 repl:
   type: process
+  environment:
+       HOST: 127.0.0.1
+       BASES: 127.0.0.1
   path: ../../repl
   run: ts-node repl.ts
