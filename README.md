@@ -1,5 +1,6 @@
 #Installation
 
+
 Install typescript
 tsc -v
 Version 2.4.2
@@ -28,7 +29,8 @@ To run with docker-compose:
 
 go to system/fuge and run:
 docker-compose up
-
+ 
+ 
 #Debuging with REPL:
 
 Repl use to call messages directly from console.
