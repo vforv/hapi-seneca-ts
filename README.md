@@ -1,4 +1,4 @@
-#Installation
+# Installation
 
 
 Install typescript
@@ -31,7 +31,7 @@ go to system/fuge and run:
 docker-compose up
  
  
-#Debuging with REPL:
+# Debuging with REPL:
 
 Repl use to call messages directly from console.
 
